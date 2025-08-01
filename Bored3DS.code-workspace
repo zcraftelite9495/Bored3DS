@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+    ],
+    "settings": {
+        "files.associations": {
+            "stdio.h": "c",
+            "string.h": "c",
+            "3ds.h": "c"
+        },
+        "makefile.configureOnOpen": false
+    }
+}
