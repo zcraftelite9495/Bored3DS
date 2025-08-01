@@ -1,11 +1,10 @@
 // ███████████████████████████████████████████████
-// █▄─▄─▀█─▄▄─█▄─▄▄▀█▄─▄▄─█▄─▄▄▀█▄▄▄░█▄─▄▄▀█─▄▄▄▄█
-// ██─▄─▀█─██─██─▄─▄██─▄█▀██─██─██▄▄░██─██─█▄▄▄▄─█
+// █▄─▄─▀█─▄▄─█▄─▄▄▀█▄─▄▄─█▄─▄▄▀█▄▄▄ █▄─▄▄▀█─▄▄▄▄█
+// ██─▄─▀█─██─██─▄─▄██─▄█▀██─██─██▄▄ ██─██─█▄▄▄▄─█
 // █▄▄▄▄██▄▄▄▄█▄▄█▄▄█▄▄▄▄▄█▄▄▄▄██▄▄▄▄█▄▄▄▄██▄▄▄▄▄█
-// █████████████████████████████████████
-// █▄─▀█▀─▄██▀▄─██▄─▄█▄─▀█▄─▄█████─▄▄▄─█
-// ██─█▄█─███─▀─███─███─█▄▀─██░░██─███▀█
-// ▀▄▄▄▀▄▄▄▀▄▄▀▄▄▀▄▄▄▀▄▄▄▀▀▄▄▀▄▄▀▀▄▄▄▄▄▀
+
+// █▀▄▀█ ▄▀█ █ █▄ █   █▀▀
+// █ ▀ █ █▀█ █ █ ▀█ ▄ █▄▄
 
 // Programmed by ZcraftElite
 
@@ -22,7 +21,7 @@
 //   ╚════════════════════════════════════════════════╝
 const char *versionString = "v0.0.1a"; /** @brief Semantic version of the program @note Format: v{major}.{minor}.{patch}{alpha/beta} */
 const char *versionDate = "2025-08-01"; /** @brief Date of the last version of the program @note Format: YYYY-MM-DD */
-const int versionRev = 11; /** @brief Revision of the program, used for tracking changes in the codebase */
+const int versionRev = 12; /** @brief Revision of the program, used for tracking changes in the codebase */
 char versionText[32]; /** @brief Full semantic version/revision version text for display purposes */
 
 
@@ -56,7 +55,6 @@ int phase; /** @brief Current phase of the application @note Phases are what I a
 int nextPhase; /** @brief Next phase of the application @note Phases are what I am using to track the part of the game the user is in. */
 bool loadingScreenActive; /** @brief Whether the loading screen is active */
 bool loadingScreenShown; /** @brief Whether the loading screen has been printed */
-
 
 //   ╔════════════════════════════════════════════════╗
 // ══╣                   FUNCTIONS                    ╠══
@@ -190,8 +188,11 @@ int main(int argc, char **argv)
     // Set the version text
     sprintf(versionText, "%s (rev%d)", versionString, versionRev);
 
-    // Start da engines
+    // Start da graphix engines
     gfxInitDefault();
+
+    // Start the romfs filesystem
+    romfsInit();
 
     // Use the PrintConsoles for the graphics
     consoleInit(GFX_TOP, &topScreen);

@@ -5,7 +5,7 @@ SETLOCAL ENABLEEXTENSIONS
 set file=%~1
 set outputFile=%~2
 
-.\utils\ffmpeg\ffmpeg -y -i "%file%" -ar 44100 -ac 2 -c:a libvorbis "%outputFile%" >nul 2>&1
+.\utils\ffmpeg\ffmpeg -y -i "%file%" -ar 22050 -ac 1 -c:a libvorbis "%outputFile%" >nul 2>&1
 
 IF %ERRORLEVEL% NEQ 0 (
     echo Audio conversion failed.

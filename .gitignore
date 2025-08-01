@@ -1,4 +1,4 @@
-.vscode/*
-build/*
-output/*
-utils/*
+.vscode
+build
+output
+utils

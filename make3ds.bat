@@ -97,13 +97,13 @@ IF %ERRORLEVEL% NEQ 0 (
 echo Built ... %projectName%.cia
 
 :: ====== Select Testing Method ======
+echo.
+echo ========== TEST SOFTWARE ==========
 if "%1"=="--useEmulator" (
     set "testdevice=2"
 ) else if "%1"=="--use3DS" (
     set "testdevice=1"
 ) else if "%1"=="" (
-    echo.
-    echo ========== TEST SOFTWARE ==========
     echo 1 - Send to physical 3DS via servefile
     echo 2 - Run in Lime3DS emulator
     set /p testdevice="Choose a test device [1/2]: "
